@@ -1,14 +1,18 @@
 import './App.css';
 import WindMap from "./components/WindMap";
-import Navbar from './components/Navbar';
+import NavHeader from './components/NavHeader';
+import {Container} from "react-bootstrap";
+
 
 function App() {
-  return (
-    <div className="App">
-          <Navbar/>
-          <WindMap/>
-    </div>
-  );
+    return (
+        <Container fluid>
+            <div className="App">
+                <NavHeader/>
+                <WindMap/>
+            </div>
+        </Container>
+    );
 }
 
 export default App;
