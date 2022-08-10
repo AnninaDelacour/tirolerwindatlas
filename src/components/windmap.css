@@ -37,7 +37,7 @@
 #layer-button > button {
     position: relative;
     z-index: 2;
-    width: 110px;
+    width: 95px;
     height: 30px;
     text-align: center;
     border-radius: 500px;
