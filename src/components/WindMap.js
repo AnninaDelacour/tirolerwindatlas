@@ -1,8 +1,8 @@
 import React, {useEffect, useRef, useState} from 'react';
 import './windmap.css';
 import mapboxgl from "mapbox-gl";
-import {StylesControl} from 'mapbox-gl-controls';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {Col, Container, Row} from "react-bootstrap";
 
 
 export default function WindMap() {
@@ -90,6 +90,16 @@ export default function WindMap() {
                 type: 'vector',
                 url: 'mapbox://anninae.81a1lp95'
                 //ORK_Freihaltefl_Landschaftlic-b4llbk
+            });
+            map.current.addSource('FHF:E', {
+                type: 'vector',
+                url: 'mapbox://anninae.1qpswj1m'
+                //ORK_Freihaltefl_Erholungsraeu-9vzypg
+            });
+            map.current.addSource('FHF:F', {
+                type: 'vector',
+                url: 'mapbox://anninae.5grd41po'
+                //ORK_Freihaltefl_Fortswirtscha-4rro3u
             });
             map.current.addSource('WSG', {
                 type: 'vector',
@@ -205,6 +215,34 @@ export default function WindMap() {
                     'fill-outline-color': "hsl(129, 15%, 75%)"
                 },
             });
+            /*map.current.addLayer({
+                id: 'FHF:E',
+                type: 'fill',
+                source: 'FHF:E',
+                'source-layer': 'ORK_Freihaltefl_Erholungsraeu-9vzypg',
+                layout: {
+                    visibility: 'none'
+                },
+                paint: {
+                    'fill-color': "hsl(40, 92%, 50%)",
+                    'fill-opacity': 0.86,
+                    'fill-outline-color': "hsl(80, 56%, 41%)"
+                },
+            });
+            map.current.addLayer({
+                id: 'FHF:F',
+                type: 'fill',
+                source: 'FHF:F',
+                'source-layer': 'ORK_Freihaltefl_Fortswirtscha-4rro3u',
+                layout: {
+                    visibility: 'none'
+                },
+                paint: {
+                    'fill-color': "hsl(80, 76%, 50%)",
+                    'fill-opacity': 0.44,
+                    'fill-outline-color': "hsl(23, 86%, 44%)"
+                },
+            });*/
             map.current.addLayer({
                 id: 'WSG',
                 type: 'fill',
@@ -284,11 +322,49 @@ export default function WindMap() {
         <div>
             <div id="layer-button"/>
             <div ref={mapContainer} id="map"/>
-
             <div className="sidebar">
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
             </div>
 
+            <div className="legend">
+                <div className="legend-header">
+                    <h4>Legende</h4>
+                </div>
+                <div className="legend-text">
+                    <Container>
+                        <Row>
+                            <Col>
+                                <Row>
+                                    <Col><strong>NP</strong> = Naturparks</Col>
+                                </Row>
+
+                                <Row>
+                                    <Col><strong>SU</strong> = Schutzgebiete Umwelt</Col>
+                                </Row>
+                                <Row>
+                                    <Col><strong>STRN</strong> = Hochrangiges Straßennetz</Col>
+                                </Row>
+                                <Row>
+                                    <Col><strong>VSG</strong> = Vogelschutzgebiete (Natura 2000)</Col>
+                                </Row>
+                            </Col>
+                            <Col>
+                                <Row>
+                                    <Col><strong>ASH</strong> = Aufstiegshilfen</Col>
+                                </Row>
+                                <Row>
+                                    <Col><strong>FHF:L</strong> = Freihaltefläche landschaftl. wertvoll</Col>
+                                </Row>
+                                <Row>
+                                    <Col><strong>WSG</strong> = Wasserschutzgebiet</Col>
+                                </Row>
+                            </Col>
+                        </Row>
+                    </Container>
+
+                </div>
+            </div>
         </div>
     )
 }
+

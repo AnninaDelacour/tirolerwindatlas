@@ -1,6 +1,6 @@
 .navbar {
     background-color: rgba(255,255,255,0.5);
-    height: 70px;
+    height: 110px;
 }
 
 .nav-bg-color {
@@ -12,14 +12,18 @@
     background: linear-gradient(to right, #009392,#72aaa1,#b1c7b3,#f1eac8,#e5b9ad,#d98994,#d0587e); /* Standard syntax */
 }
 
-.brand {
-    font-family: 'Josefin Sans', sans-serif;
+.navbar-brand {
+    font-family: 'Josefin Sans', sans-serif!important;
     font-style: italic;
     font-weight: 700;
     font-size: 55px;
     text-transform: uppercase;
     text-align: left;
-    color: #f8f1e9;
-    padding: 10px;
+    color: #f8f1e9 !important;
+    padding-left: 10px;
     margin: 0;
+}
+
+.brand:hover {
+    color: #f8f1e9;
 }
