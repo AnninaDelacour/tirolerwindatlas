@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tirolerwindatlas/static/css/main.98112cb5.css",
+    "main.js": "/tirolerwindatlas/static/js/main.1c4c00ac.js",
+    "index.html": "/tirolerwindatlas/index.html",
+    "main.98112cb5.css.map": "/tirolerwindatlas/static/css/main.98112cb5.css.map",
+    "main.1c4c00ac.js.map": "/tirolerwindatlas/static/js/main.1c4c00ac.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98112cb5.css",
+    "static/js/main.1c4c00ac.js"
+  ]
+}
