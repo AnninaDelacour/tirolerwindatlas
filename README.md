@@ -3,7 +3,3 @@
 [Work in Progress]
 
 
-### Platzhalter
-
-Lorem Ipsum
-
